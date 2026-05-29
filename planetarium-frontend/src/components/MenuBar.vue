@@ -45,16 +45,17 @@ function logout() {
         {{ title }}
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn class="mx-2" :to="{ name: 'recipes' }"> Recipes </v-btn>
+      <v-btn class="mx-2" :to="{ name: 'recipes' }"> Home </v-btn>
       <v-btn v-if="user === null" class="mx-2" :to="{ name: 'login' }">
         Login
       </v-btn>
-      <v-btn v-if="user !== null" class="mx-2" :to="{ name: 'ingredients' }">
-        Ingredients
+      <v-btn v-if="user !== null" class="mx-2" :to="{ name: 'ingredients' }"> 
+        Schedule
       </v-btn>
       <v-btn v-if="user !== null" class="mx-2" :to="{ name: 'ingredients' }">
         Database
       </v-btn>
+
       <v-menu v-if="user !== null" min-width="200px" rounded>
         <template v-slot:activator="{ props }">
           <v-btn icon v-bind="props">
