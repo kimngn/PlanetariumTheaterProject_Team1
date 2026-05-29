@@ -7,7 +7,7 @@ import UserServices from "../services/UserServices";
 const router = useRouter();
 
 const user = ref(null);
-const title = ref("Recipes");
+const title = ref("Home");
 const logoURL = ref("");
 
 onMounted(() => {
@@ -51,6 +51,9 @@ function logout() {
       </v-btn>
       <v-btn v-if="user !== null" class="mx-2" :to="{ name: 'ingredients' }">
         Ingredients
+      </v-btn>
+      <v-btn v-if="user !== null" class="mx-2" :to="{ name: 'ingredients' }">
+        Database
       </v-btn>
       <v-menu v-if="user !== null" min-width="200px" rounded>
         <template v-slot:activator="{ props }">
