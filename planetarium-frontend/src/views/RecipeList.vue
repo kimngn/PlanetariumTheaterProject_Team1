@@ -3,6 +3,7 @@ import { onMounted } from "vue";
 import { ref } from "vue";
 import RecipeCard from "../components/RecipeCardComponent.vue";
 import RecipeServices from "../services/RecipeServices.js";
+import Carousel from "../components/Carousel.vue"
 
 const recipes = ref([]);
 const isAdd = ref(false);
@@ -99,6 +100,8 @@ function closeSnackBar() {
         </v-col>
       </v-row>
 
+      <Carousel/> <!-- Maybe text shows up because Carousel itself is not working? -->
+      
       <RecipeCard
         v-for="recipe in recipes"
         :key="recipe.id"
